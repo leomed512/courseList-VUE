@@ -1,0 +1,16 @@
+html {
+  padding: 20px;
+  color: #3d3d3d;
+}
+
+.red {
+  color: tomato;
+}
+
+.container {
+  -webkit-margin-before: 100px;
+          margin-block-start: 100px;
+}
+.container .logo {
+  max-width: 100px;
+}
