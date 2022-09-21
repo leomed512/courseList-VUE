@@ -5,7 +5,8 @@ const app = new Vue({
       return {
         courses: [],
         time: '',
-        title: ''
+        title: '',
+        alertMessage: false
       }
     },
     
@@ -19,6 +20,7 @@ const app = new Vue({
     
     methods: {
         addCourse () {
+            this.alertMessage = !this.alertMessage;
             if (!this.title || !this.time) {return}
             this.courses.push({title: this.title, time: this.time})
             
