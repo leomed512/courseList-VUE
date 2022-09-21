@@ -14,3 +14,10 @@ html {
 .container .logo {
   max-width: 100px;
 }
+.container .deleteBtn {
+  background-color: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: none;
+  font-size: 10px;
+}

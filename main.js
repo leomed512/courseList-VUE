@@ -26,6 +26,9 @@ const app = new Vue({
             
             this.title = ''
             this.time = ''
+        },
+        removeCourse (c) {
+            this.courses = this.courses.filter((t) => t !== c)
         }
     }
   });

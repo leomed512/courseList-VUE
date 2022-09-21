@@ -37,7 +37,10 @@
           <p class="red" v-show="!courses.length">Aun no has realizado cursos</p>
           <div>
             <ol>
-              <li v-for="c in courses" :key="c">{{`${c.title} -${c.time} horas`  }}</li>
+              <li v-for="c in courses" :key="c">
+                {{`${c.title} -${c.time} horas`  }}
+                <button class="deleteBtn ms-2" @click="removeCourse(c)" type="button">❌</button>
+              </li>
             </ol>
             <hr/>
             <p>
