@@ -17,18 +17,34 @@ const app = new Vue({
         }
 
     },
+    mounted() {
+      if (localStorage.courses) {
+        this.courses = JSON.parse(localStorage.getItem('courses'));
+      }
+    },
     
     methods: {
         addCourse () {
             this.alertMessage = !this.alertMessage;
+
             if (!this.title || !this.time) {return}
-            this.courses.push({title: this.title, time: this.time})
             
+            this.courses.push({title: this.title, time: this.time})
+            const parsed = JSON.stringify(this.courses);
+            localStorage.setItem('courses', parsed);
+
             this.title = ''
-            this.time = ''
+            this.time = ''        
         },
         removeCourse (c) {
             this.courses = this.courses.filter((t) => t !== c)
+        },
+        resetList() {
+          localStorage.clear();
+          this.courses = [];
         }
     }
+
+  
   });
+
